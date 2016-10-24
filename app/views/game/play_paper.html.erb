@@ -1,0 +1,76 @@
+<!-- this is considered an embedded ruby template (erb) -->
+<!-- it allows us to embed ruby code within the html -->
+<div class="container">
+  <hr>
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 col-xs-12">
+      <div class="btn-group btn-group-justified">
+        <a href="http://localhost:3000/rock" class="btn btn-block btn-primary">
+          Play Rock
+        </a>
+
+        <a href="http://localhost:3000/paper" class="btn btn-block btn-info">
+          Play Paper
+        </a>
+
+        <a href="http://localhost:3000/scissors" class="btn btn-block btn-primary">
+          Play Scissors
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-4 col-md-offset-2 col-xs-6">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h2 class="panel-title text-center">
+            Paper
+          </h2>
+        </div>
+        <div class="panel-body">
+          <img class="img-responsive" src="/assets/images/paper.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-xs-6">
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h2 class="panel-title text-center">
+            <%= @computer_move.capitalize %>
+          </h2>
+        </div>
+        <div class="panel-body">
+          <img class="img-responsive" src="/assets/images/<%=@computer_move %>.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="well text-center">
+        <h1>
+          <% if @computer_move == "paper" %>
+          <span class="label label-warning">
+            You tied!
+          </span>
+          <%elsif @computer_move == "scissors"%>
+          <span class="label label-danger">
+            You lost!
+          </span>
+          <%elsif @computer_move == "rock"%>
+          <span class="label label-success">
+            You won!
+            <% end %>
+          </span>
+        </h1>
+      </div>
+    </div>
+  </div>
+
+</div>

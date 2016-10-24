@@ -1,6 +1,5 @@
 <!-- this is considered an embedded ruby template (erb) -->
 <!-- it allows us to embed ruby code within the html -->
-
 <div class="container">
   <hr>
 
@@ -29,11 +28,11 @@
     <div class="panel panel-success">
       <div class="panel-heading">
         <h2 class="panel-title text-center">
-          Rock
+          Scissors
         </h2>
       </div>
       <div class="panel-body">
-        <img class="img-responsive" src="/assets/images/rock.png">
+        <img class="img-responsive" src="/assets/images/scissors.png">
       </div>
     </div>
   </div>
@@ -56,16 +55,15 @@
   <div class="col-md-12">
     <div class="well text-center">
       <h1>
-
-        <% if @computer_move == "rock" %>
+        <% if @computer_move == "scissors" %>
         <span class="label label-warning">
           You tied!
         </span>
-        <%elsif @computer_move == "paper"%>
+        <%elsif @computer_move == "rock"%>
         <span class="label label-danger">
           You lost!
         </span>
-        <%elsif @computer_move == "scissors"%>
+        <%elsif @computer_move == "paper"%>
         <span class="label label-success">
           You won!
           <% end %>
